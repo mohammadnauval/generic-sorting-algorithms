@@ -1,6 +1,6 @@
-package com.mnauval.java.sortingalgorithm;
+package com.mnauval.java.sorting.algorithms;
 
-import com.mnauval.java.sortingutil.Utility;
+import com.mnauval.java.sorting.util.Utility;
 
 /**
  *

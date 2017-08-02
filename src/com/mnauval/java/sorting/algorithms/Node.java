@@ -1,4 +1,4 @@
-package com.mnauval.java.sortingalgorithm;
+package com.mnauval.java.sorting.algorithms;
 
 /**
  *
