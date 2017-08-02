@@ -1,14 +1,13 @@
 package com.mnauval.java.sortingutil;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Mohammad Nauval
  */
 public class Utility {
-    public static boolean isSorted(Comparable[] list) {
-        if (list.length == 0 || list.length == 1) {
-            return true;
-        }
+    public static <T extends Comparable<? super T>> boolean isSorted(T[] list) {
         for (int i = 1; i < list.length; i++) {
             if (list[i].compareTo(list[i-1]) < 0) {
                 return false;
@@ -17,15 +16,31 @@ public class Utility {
         return true;
     }
     
-    public static Comparable[] swap(Comparable[] list, int source, int target) {
-        Comparable temp = list[source];
+    public static <T extends Comparable<? super T>> boolean isSorted(ArrayList<T> list) {
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i).compareTo(list.get(i - 1)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static <T extends Comparable<? super T>> T[] swap(T[] list, int source, int target) {
+        T temp = list[source];
         list[source] = list[target];
         list[target] = temp;
         return list;
     }
     
-    public static void print(Comparable[] list) {
+    public static <T extends Comparable<? super T>> void print(T[] list) {
         for (Comparable value : list) {
+            System.out.print(value + " ");
+        }
+        System.out.println("");
+    }
+    
+    public static <T extends Comparable<? super T>> void print(ArrayList<T> list) {
+        for (T value : list) {
             System.out.print(value + " ");
         }
         System.out.println("");

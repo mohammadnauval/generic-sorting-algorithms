@@ -1,6 +1,7 @@
 package com.mnauval.java.sortingalgorithm;
 
 import com.mnauval.java.sortingutil.Utility;
+import java.util.ArrayList;
 
 /**
  *
@@ -35,6 +36,19 @@ public class Test {
         Utility.print(InsertionSort.sort(data4));
         Utility.print(InsertionSort.sort(data5));
         Utility.print(InsertionSort.sort(data6));
-        
+        System.out.println("----------------- Merge Sort --------------------------");
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(9);
+        list.add(8);
+        list.add(7);
+        list.add(6);
+        list.add(4);
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        list.add(2);
+        list.add(1);
+        Utility.print(MergeSort.sort(list));
     }
 }
