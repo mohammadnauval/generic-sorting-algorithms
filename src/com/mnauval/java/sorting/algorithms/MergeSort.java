@@ -9,16 +9,14 @@ import java.util.ArrayList;
  */
 public class MergeSort {
     
-    public static <T extends Comparable<? super T>> ArrayList<T> sort(ArrayList<T> list) {
+    public static <T extends Comparable<? super T>> void sort(ArrayList<T> list) {
         if (Utility.isSorted(list)) {
-            return list;
+            return;
         }
         mergeSort(list, 0, list.size() - 1);
-        
-        return list;
     }
     
-    public static <T extends Comparable<? super T>> void mergeSort(ArrayList<T> list, int left, int right) {
+    private static <T extends Comparable<? super T>> void mergeSort(ArrayList<T> list, int left, int right) {
         if (left < right) {
             // find the middle point.
             int middle = (left + right) / 2;
@@ -32,7 +30,7 @@ public class MergeSort {
         } 
     }
     
-    public static <T extends Comparable<? super T>> void merge(ArrayList<T> list, int left, int middle, int right) {
+    private static <T extends Comparable<? super T>> void merge(ArrayList<T> list, int left, int middle, int right) {
         // size of two temp. lists.
         int n1 = middle - left + 1;
         int n2 = right - middle;

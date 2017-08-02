@@ -8,9 +8,9 @@ import com.mnauval.java.sorting.util.Utility;
  */
 public class BubbleSort {
     
-    public static Comparable[] sort(Comparable[] list) {
+    public static <T extends Comparable<? super T>> void sort(Comparable[] list) {
         if (Utility.isSorted(list)) {
-            return list;
+            return;
         }
         
         int range = list.length;
@@ -24,7 +24,6 @@ public class BubbleSort {
             }
             range = newRange;
         } while (range != 0);
-        return list;
     }
     
 }

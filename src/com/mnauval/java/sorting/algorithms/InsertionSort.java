@@ -8,9 +8,9 @@ import com.mnauval.java.sorting.util.Utility;
  */
 public class InsertionSort {
     
-    public static Comparable[] sort(Comparable[] list) {
+    public static <T extends Comparable<? super T>> void sort(Comparable[] list) {
         if (Utility.isSorted(list)) {
-            return list;
+            return;
         }
         
         for (int i = 0; i < list.length; i++) {
@@ -22,7 +22,6 @@ public class InsertionSort {
             }
             list[j] = current;
         }
-        return list;
     }
     
 }

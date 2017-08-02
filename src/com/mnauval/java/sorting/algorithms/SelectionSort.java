@@ -8,9 +8,9 @@ import com.mnauval.java.sorting.util.Utility;
  */
 public class SelectionSort {
     
-    public static <T extends Comparable<? super T>> T[] sort(T[] list) {
+    public static <T extends Comparable<? super T>> void sort(T[] list) {
         if (Utility.isSorted(list)) {
-            return list;
+            return;
         }
         
         for (int i = 0; i < list.length - 1; i++) {
@@ -24,7 +24,6 @@ public class SelectionSort {
                 Utility.swap(list, i, indexOfMinValue);
             }
         }
-        return list;
     }
     
 }
