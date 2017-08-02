@@ -1,7 +1,6 @@
 package com.mnauval.java.sorting.algorithms;
 
 import com.mnauval.java.sorting.util.Utility;
-import java.util.ArrayList;
 
 /**
  *
@@ -9,14 +8,14 @@ import java.util.ArrayList;
  */
 public class MergeSort {
     
-    public static <T extends Comparable<? super T>> void sort(ArrayList<T> list) {
+    public static <T extends Comparable<? super T>> void sort(T[] list) {
         if (Utility.isSorted(list)) {
             return;
         }
-        mergeSort(list, 0, list.size() - 1);
+        mergeSort(list, 0, list.length - 1);
     }
     
-    private static <T extends Comparable<? super T>> void mergeSort(ArrayList<T> list, int left, int right) {
+    private static <T extends Comparable<? super T>> void mergeSort(T[] list, int left, int right) {
         if (left < right) {
             // find the middle point.
             int middle = (left + right) / 2;
@@ -27,51 +26,38 @@ public class MergeSort {
             
             // merge the sorted halves
             merge(list, left, middle, right);
-        } 
+        }
     }
     
-    private static <T extends Comparable<? super T>> void merge(ArrayList<T> list, int left, int middle, int right) {
-        // size of two temp. lists.
-        int n1 = middle - left + 1;
-        int n2 = right - middle;
-
-        // initialize two temp. lists.
-        ArrayList<T> temp1 = new ArrayList<>();
-        ArrayList<T> temp2 = new ArrayList<>();
+    private static <T extends Comparable<? super T>> void merge(T[] list, int left, int middle, int right) {
+        // create a helper array.s
+        T[] helper = list.clone();
         
-        // insert values into two temp. list
-        for (int i = 0; i < n1; i++) {
-            temp1.add(list.get(left + i));
-        }
-        for (int i = 0; i < n2; i++) {
-            temp2.add(list.get(middle + 1 + i));
-        }
-        
-        // merge two lists.
-        int i = 0; 
-        int j = 0;
+        // merging the data.
+        int i = left;
+        int j = middle + 1;
         int k = left;
-        while (i < n1 && j < n2) {
-            if (temp1.get(i).compareTo(temp2.get(j)) <= 0) {
-                list.set(k, temp1.get(i));
+        while (i <= middle && j <= right) {
+            if (helper[i].compareTo(helper[j]) <= 0) {
+                list[k] = helper[i];
                 i++;
             } else {
-                list.set(k, temp2.get(j));
+                list[k] = helper[j];
                 j++;
             }
             k++;
         }
         
-        // copy the remaining values from the first temp. array.
-        while (i < n1) {
-            list.set(k, temp1.get(i));
+        // copy the rest of the left side.
+        while (i <= middle) {
+            list[k] = helper[i];
             i++;
             k++;
         }
         
-        // copy the remaining values from the second temp. array.
-        while (j < n2) {
-            list.set(k, temp2.get(j));
+        // copy the rest of the right side.
+        while (j <= right) {
+            list[k] = helper[j];
             j++;
             k++;
         }

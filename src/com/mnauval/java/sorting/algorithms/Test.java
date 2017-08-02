@@ -14,27 +14,16 @@ public class Test {
         Integer[] data3 = {3, 2};
         Integer[] data4 = {5, 2, 6, 1, 9};
         Integer[] data5 = {10, 11, 3, 6, 4, 2};
-        Integer[] data6 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+        Integer[] data6 = {10, 9, 8, 7, 4, 4, 6, 5, 4, 3, 1, 2, 1};
         System.out.println("------------------ Selection Sort ---------------------");
-        
         System.out.println("------------------ Bublle Sort ---------------------");
         
         System.out.println("------------------ Insertion Sort ---------------------");
         
         System.out.println("----------------- Merge Sort --------------------------");
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(10);
-        list.add(9);
-        list.add(8);
-        list.add(7);
-        list.add(6);
-        list.add(4);
-        list.add(5);
-        list.add(4);
-        list.add(3);
-        list.add(2);
-        list.add(1);
-        MergeSort.sort(list);
-        Utility.print(list);
+        /*MergeSort.sort(data5);
+        MergeSort.sort(data6);
+        Utility.print(data5);
+        Utility.print(data6);*/
     }
 }
