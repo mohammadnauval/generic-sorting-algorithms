@@ -9,35 +9,35 @@ import com.mnauval.java.sorting.util.Utility;
 public class MergeSort {
     
     public static <T extends Comparable<? super T>> void sort(T[] list) {
-        if (Utility.isSorted(list)) {
+        if (Utility.arrayIsSorted(list)) {
             return;
         }
         mergeSort(list, 0, list.length - 1);
     }
     
-    private static <T extends Comparable<? super T>> void mergeSort(T[] list, int left, int right) {
-        if (left < right) {
+    private static <T extends Comparable<? super T>> void mergeSort(T[] list, int low, int high) {
+        if (low < high) {
             // find the middle point.
-            int middle = (left + right) / 2;
+            int middle = (low + high) / 2;
             
             // sort the first and second halves
-            mergeSort(list, left, middle);
-            mergeSort(list, middle+1, right);
+            mergeSort(list, low, middle);
+            mergeSort(list, middle+1, high);
             
             // merge the sorted halves
-            merge(list, left, middle, right);
+            merge(list, low, middle, high);
         }
     }
     
-    private static <T extends Comparable<? super T>> void merge(T[] list, int left, int middle, int right) {
-        // create a helper array.s
+    private static <T extends Comparable<? super T>> void merge(T[] list, int low, int middle, int high) {
+        // create a helper array
         T[] helper = list.clone();
         
         // merging the data.
-        int i = left;
+        int i = low;
         int j = middle + 1;
-        int k = left;
-        while (i <= middle && j <= right) {
+        int k = low;
+        while (i <= middle && j <= high) {
             if (helper[i].compareTo(helper[j]) <= 0) {
                 list[k] = helper[i];
                 i++;
@@ -56,7 +56,7 @@ public class MergeSort {
         }
         
         // copy the rest of the right side.
-        while (j <= right) {
+        while (j <= high) {
             list[k] = helper[j];
             j++;
             k++;

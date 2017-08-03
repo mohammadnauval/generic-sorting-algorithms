@@ -25,5 +25,10 @@ public class Test {
         MergeSort.sort(data6);
         Utility.print(data5);
         Utility.print(data6);*/
+        System.out.println("------------------ Quick Sort -------------------------");
+        /*QuickSort.sort(data5);
+        Utility.print(data5);
+        QuickSort.sort(data6);
+        Utility.print(data6);*/
     }
 }

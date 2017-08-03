@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Mohammad Nauval
  */
 public class Utility {
-    public static <T extends Comparable<? super T>> boolean isSorted(T[] list) {
+    public static <T extends Comparable<? super T>> boolean arrayIsSorted(T[] list) {
         for (int i = 1; i < list.length; i++) {
             if (list[i].compareTo(list[i-1]) < 0) {
                 return false;
@@ -16,7 +16,7 @@ public class Utility {
         return true;
     }
     
-    public static <T extends Comparable<? super T>> boolean isSorted(ArrayList<T> list) {
+    public static <T extends Comparable<? super T>> boolean arrayIsSorted(ArrayList<T> list) {
         for (int i = 1; i < list.size(); i++) {
             if (list.get(i).compareTo(list.get(i - 1)) < 0) {
                 return false;

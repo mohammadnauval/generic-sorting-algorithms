@@ -9,7 +9,7 @@ import com.mnauval.java.sorting.util.Utility;
 public class SelectionSort {
     
     public static <T extends Comparable<? super T>> void sort(T[] list) {
-        if (Utility.isSorted(list)) {
+        if (Utility.arrayIsSorted(list)) {
             return;
         }
         
