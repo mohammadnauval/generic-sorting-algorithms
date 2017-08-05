@@ -1,6 +1,6 @@
-package com.mnauval.java.sorting.algorithms;
+package com.mnauval.java.sortingalgorithms;
 
-import com.mnauval.java.sorting.util.Utility;
+import com.mnauval.java.sortinglib.Utility;
 import java.util.ArrayList;
 
 /**
@@ -30,5 +30,10 @@ public class Test {
         Utility.print(data5);
         QuickSort.sort(data6);
         Utility.print(data6);*/
+        System.out.println("------------------- Tree Sort ---------------------------");
+        BinaryTreeSort.sort(data5);
+        Utility.print(data5);
+        BinaryTreeSort.sort(data6);
+        Utility.print(data6);
     }
 }

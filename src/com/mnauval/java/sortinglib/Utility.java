@@ -1,4 +1,4 @@
-package com.mnauval.java.sorting.util;
+package com.mnauval.java.sortinglib;
 
 import java.util.ArrayList;
 

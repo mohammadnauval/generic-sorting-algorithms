@@ -1,6 +1,6 @@
-package com.mnauval.java.sorting.algorithms;
+package com.mnauval.java.sortingalgorithms;
 
-import com.mnauval.java.sorting.util.Utility;
+import com.mnauval.java.sortinglib.Utility;
 
 /**
  * Quick sort algorithm using Hoare partition scheme.
@@ -16,7 +16,7 @@ public class QuickSort {
         quickSort(list, 0, list.length - 1);
     }
     
-    public static <T extends Comparable<? super T>> void quickSort(T[] list, int low, int high) {
+    private static <T extends Comparable<? super T>> void quickSort(T[] list, int low, int high) {
         if (low < high) {
             int pivot = partition(list, low, high);
             quickSort(list, low, pivot - 1);
@@ -24,7 +24,7 @@ public class QuickSort {
         }
     }
     
-    public static <T extends Comparable<? super T>> int partition(T[] list, int low, int high) {
+    private static <T extends Comparable<? super T>> int partition(T[] list, int low, int high) {
         T pivot = list[high];
         int i = low - 1;
         for (int j = low; j < high - 1; j++) {
