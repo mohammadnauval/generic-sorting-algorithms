@@ -31,9 +31,14 @@ public class Test {
         QuickSort.sort(data6);
         Utility.print(data6);*/
         System.out.println("------------------- Tree Sort ---------------------------");
-        BinaryTreeSort.sort(data5);
+        /*BinaryTreeSort.sort(data5);
         Utility.print(data5);
         BinaryTreeSort.sort(data6);
+        Utility.print(data6);*/
+        System.out.println("------------------ Heap Sort ----------------------------");
+        HeapSort.sort(data5);
+        Utility.print(data5);
+        HeapSort.sort(data6);
         Utility.print(data6);
     }
 }
